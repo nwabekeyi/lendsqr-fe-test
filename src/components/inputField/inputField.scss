@@ -1,0 +1,50 @@
+// src/components/InputField/InputField.module.scss
+
+@import '../../styles/_variables';
+@import '../../styles/media-queries.scss';
+
+.inputField{
+  display: flex;
+}
+
+.loginField {
+  width: 95%;
+  height: 20px;
+  border-radius: 8px;
+  border: 2px solid #545f7d2c  ;
+  padding: 13px 10px;
+  margin: 1.5em 0;
+  display: block;
+
+  @include mq-small {
+    width: 92%;
+
+    }
+  
+
+  &::placeholder {
+    color:#545f7d7a;
+  }
+  &:focus {
+    border-color: $button-color; 
+    outline: none;
+  }
+}
+
+.togglePassword {
+  position: relative;
+  margin-left: -60px;
+  margin-top: 47px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $button-color;
+  font-weight: 700;
+}
+
+.searchField {
+  width: 400px;
+  height: 40px;
+  @extend .loginField;
+}

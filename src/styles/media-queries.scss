@@ -1,0 +1,39 @@
+// src/styles/_media-queries.scss
+
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-extra-large: 1200px;
+$breakpoint-extra-small: 375px; 
+
+// Example media queries
+@mixin mq-small {
+  @media (max-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin mq-medium {
+  @media (max-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin mq-large {
+  @media (max-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin mq-extra-large {
+  @media (max-width: $breakpoint-extra-large) {
+    @content;
+  }
+}
+
+// Media query for 375px width
+@mixin mq-extra-small {
+  @media (max-width: $breakpoint-extra-small) {
+    @content;
+  }
+}

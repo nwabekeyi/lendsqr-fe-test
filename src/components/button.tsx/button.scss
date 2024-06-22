@@ -1,0 +1,15 @@
+// src/components/LoginForm.module.scss
+
+@import '../../styles/mixins'; // Import mixins
+
+.login {
+  @include button();
+}
+
+.login:hover{
+  @include buttonHover();
+}
+
+.login:active{
+  @include buttonActive();
+}

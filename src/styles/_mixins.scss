@@ -1,0 +1,37 @@
+@import 'variables';
+
+  
+  @mixin widget-figures {
+    width: 240px;
+    height: 160px;
+    top: 228px;
+    left: 343px;
+    gap: 0px;
+    border: 1px solid #000; // Example border definition
+    opacity: 0;
+  }
+  
+
+@mixin button($backgorundColor: $button-color, $text-color: white, $padding: 16px 12px, $border-color: $button-color) {
+    border: 1px solid $border-color;
+    font-weight: 500;
+    border-radius: 8px;
+    color: $text-color;
+    background-color: $backgorundColor;
+    width: 100%;
+    padding: $padding;
+    cursor: pointer;
+  }
+  
+  @mixin buttonHover($backgorundColor:white, $text-color:$button-color) {
+    border: 1px solid $button-color;
+    font-weight: 600;
+    color: $text-color;
+    background-color: $backgorundColor;
+  }
+
+  @mixin buttonActive($backgorundColor:rgb(92, 79, 79), $text-color: white) {
+    border: 1px solid rgb(92, 79, 79);
+    color: $text-color;
+    background-color: $backgorundColor;
+  }

@@ -1,0 +1,114 @@
+@import '../../styles/variables';
+@import '../../styles/media-queries.scss';
+
+
+body {
+  font-family: $font-family;
+  overflow-y: hidden;
+  background-color: white;
+  @include mq-extra-small {
+    overflow-y: scroll;
+  }
+
+  .login-form-container {
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: white; /* Example background color */
+    min-height: 100vh; /* Minimum height of viewport height */
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    height: 100%;
+    @include mq-large {
+      width:100vw;
+      display:block;
+      padding-right: 10%;
+  }
+
+    .login-images{
+      background-color: rgb(253, 253, 253);
+      height: 100%;
+      width: 100%;
+      display:grid;
+      align-items: center;
+      @include mq-large {
+        display:none;
+    }
+      .logo{
+        position: absolute;
+        top: 10vh;
+        left: 5vw;
+
+      }
+      #image{
+        width: 100%;
+        object-fit:cover;
+        margin-top: 10%;
+  
+      }
+    }
+    .logo-mobile{
+      margin-left: 10vw;
+      display: none;
+      margin-bottom: 5em;
+      @include mq-large {
+        display:block;
+        margin-top: 15vh;
+
+    }
+    @include mq-extra-small {
+      display:block;
+      margin-top: 10vh;
+
+  }
+  
+  @include mq-small {
+      margin-bottom: 2em;
+      font-size: 0.5em;
+    }
+
+    }
+
+    .login-form{
+      padding: 0 20% 0 14%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      
+
+      @include mq-large {
+      width: 80%;
+      padding: 0;
+      display:block;
+      margin: auto;
+
+    }
+    }
+    .login-header{
+      color: $header-color;
+      font-weight: $extra-bold-weight;
+      font-size:2.5em;
+      @include mq-small {
+        font-size: 2em;
+      }
+    }
+    .login-text{
+      margin-top: 0;
+      color: $text-color;
+      margin-bottom: 2em;
+      font-size: 20px;
+      @include mq-small {
+        margin-bottom: 1em;
+        font-size: 1em;
+      }
+    }
+    .forget-password{
+      color:$button-color;
+      font-size: 12px;
+      margin-bottom: 2.5em;
+      cursor: pointer;      
+    }
+  }
+}
+
+
+
