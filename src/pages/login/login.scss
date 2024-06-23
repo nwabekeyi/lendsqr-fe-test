@@ -105,7 +105,12 @@ body {
       color:$button-color;
       font-size: 12px;
       margin-bottom: 2.5em;
-      cursor: pointer;      
+      cursor: pointer;
+    }
+    .error{
+      color:$blacklist-color;
+      font-size: small;
+      margin-top: -3%;
     }
   }
 }

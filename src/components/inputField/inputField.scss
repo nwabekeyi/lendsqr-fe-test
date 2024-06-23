@@ -20,7 +20,7 @@
     width: 92%;
 
     }
-  
+
 
   &::placeholder {
     color:#545f7d7a;
@@ -41,6 +41,7 @@
   cursor: pointer;
   color: $button-color;
   font-weight: 700;
+  padding: 0;
 }
 
 .searchField {

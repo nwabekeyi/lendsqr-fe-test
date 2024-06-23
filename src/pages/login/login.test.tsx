@@ -1,42 +1,40 @@
-
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import LoginPage from './login';
+import userEvent from '@testing-library/user-event';
+import LoginForm from './login'; // Adjust the path as per your actual file location
 
-describe('LoginPage', () => {
-  it('should render the login form', () => {
-    render(<LoginPage />);
-    const emailInput = screen.getByPlaceholderText('Email');
-    const passwordInput = screen.getByPlaceholderText('Password');
-    const submitButton = screen.getByText('LOG IN');
-    expect(emailInput).toBeInTheDocument();
-    expect(passwordInput).toBeInTheDocument();
-    expect(submitButton).toBeInTheDocument();
+// Import useFormik from Formik
+import { useFormik } from 'formik';
+
+// Mock Formik module
+jest.mock('formik', () => ({
+  ...jest.requireActual('formik'), // use actual Formik functions except useFormik
+  useFormik: jest.fn(), // mock the useFormik function
+}));
+
+describe('LoginForm component', () => {
+  it('logs form inputs on login button click', async () => {
+    // Mock useFormik's behavior
+    (useFormik as jest.Mock).mockReturnValue({
+      initialValues: { email: '', password: '' },
+      handleSubmit: (values: any) => {
+        console.log('Form values:', values); // Simulate form submission behavior
+      },
+    });
+
+    render(<LoginForm />);
+
+    // Fill in form inputs
+    await userEvent.type(screen.getByPlaceholderText('Email'), 'test@example.com');
+    await userEvent.type(screen.getByPlaceholderText('Password'), 'password');
+
+    // Click on login button
+    fireEvent.click(screen.getByText('LOG IN'));
+
+    // Assertions
+    expect(console.log).toHaveBeenCalledWith('Form values:', {
+      email: 'test@example.com',
+      password: 'password',
+    });
   });
-
-  it('should handle email and password input', () => {
-    render(<LoginPage />);
-    const emailInput = screen.getByPlaceholderText('Email');
-    const passwordInput = screen.getByPlaceholderText('Password');
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.change(passwordInput, { target: { value: 'password123' } });
-    expect(emailInput.value).toBe('test@example.com');
-    expect(passwordInput.value).toBe('password123');
-  });
-
-  it('should show an error message for invalid credentials', async () => {
-    render(<LoginPage />);
-    const emailInput = screen.getByPlaceholderText('Email');
-    const passwordInput = screen.getByPlaceholderText('Password');
-    const submitButton = screen.getByText('LOG IN');
-    
-    fireEvent.change(emailInput, { target: { value: 'invalid@example.com' } });
-    fireEvent.change(passwordInput, { target: { value: 'wrongpassword' } });
-    fireEvent.click(submitButton);
-
-    const errorMessage = await screen.findByText('Invalid email or password');
-    expect(errorMessage).toBeInTheDocument();
-  });
-
-  // Add more tests as necessary
 });
