@@ -2,12 +2,12 @@
 
 import React from 'react';
 import './styles/main.scss';
-import LoginForm from './pages/login/login.tsx';
+import AppRouter from './router';
 
 const App: React.FC = () => {
   return (
     <div className="app">
-      <LoginForm/> 
+      <AppRouter/> 
   </div>
   );
 }

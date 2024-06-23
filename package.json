@@ -11,8 +11,10 @@
     "test": "jest --config jest.config.ts --require ts-node/register"
   },
   "dependencies": {
+    "faker": "^6.6.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1",
     "sass": "^1.77.6"
   },
   "devDependencies": {

@@ -4,10 +4,10 @@ import React from 'react';
 import { useFormik, FormikProps } from 'formik';
 import * as Yup from 'yup';
 import './login.scss';
-import Button from '../../components/button/button';
-import InputField from '../../components/inputField/inputField';
+import { Button, InputField } from '../../components';
 import loginImage from "../../assets/loginImage.png";
 import companyLogo from "../../assets/companyLogo.svg";
+import { useNavigate } from 'react-router-dom';
 
 interface LoginFormValues {
   email: string;
@@ -15,6 +15,9 @@ interface LoginFormValues {
 }
 
 const LoginPage: React.FC = () => {
+
+  const navigate = useNavigate();
+
   const formik: FormikProps<LoginFormValues> = useFormik<LoginFormValues>({
     initialValues: {
       email: '',
@@ -26,7 +29,7 @@ const LoginPage: React.FC = () => {
     }),
     onSubmit: (values: LoginFormValues) => {
       console.log('Form values:', values);
-      // Handle form submission here
+      navigate('/dashboard')
     },
   });
 

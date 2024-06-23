@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import LoginForm from './login'; // Adjust the path as per your actual file location
+import LoginForm from '.'; // Adjust the path as per your actual file location
 
 // Import useFormik from Formik
 import { useFormik } from 'formik';

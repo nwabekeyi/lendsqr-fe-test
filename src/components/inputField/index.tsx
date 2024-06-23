@@ -9,8 +9,7 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const InputField: React.FC<InputFieldProps> = ({ label, fieldType, type, ...rest }) => {
-  const [showPassword, setShowPassword] = useState(false);
-
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const togglePasswordVisibility = () => {
     setShowPassword(prevState => !prevState);
   };

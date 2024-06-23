@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import InputField from './inputField';
+import InputField from './index';
 
 describe('InputField component', () => {
   // Positive Tests
