@@ -1,22 +1,28 @@
 // src/styles/_variables.scss
 
 // Text color
-$text-color: #545F7D;
+$text-color: #545f7d9b;
 
 // Header color
-$header-color: #213F7D;
+$header-color: #21407dd0;
+$header-color-dark: #213F7D;
 
 // Button primary color
 $button-color: #39CDCC;
 
 // Blacklist color
 $blacklist-color: #E4033B;
+$blacklist-color-light: #e4033b0c;
+
 
 // Active color
 $active-color: #39CD62;
+$active-color-light:#39cd630c;
 
 // Pending color
 $pending-color: #E9B200;
+$pending-color-light: #e9b3000f;
+
 
 // Border radius
 $border-radius: 8px;

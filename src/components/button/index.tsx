@@ -2,15 +2,18 @@
 
 import React, { ButtonHTMLAttributes } from 'react';
 import './button.scss'; // Import module-specific SCSS
+import { IconType } from 'react-icons';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  buttonText: string;
-  login: boolean;
+  buttonText: any;
+  login?: boolean;
+  search?: boolean;
+
 }
 
-const Button: React.FC<ButtonProps> = ({ login, buttonText, ...rest }) => {
+const Button: React.FC<ButtonProps> = ({ login, search, buttonText, ...rest }) => {
 
-  const className: string = login ? "login" : "others"
+  const className: string = login ? "login" : search ? "search" : "others";
   return (
     <button className={`${className}`} {...rest}>
       {buttonText}

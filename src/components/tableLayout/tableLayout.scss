@@ -1,24 +1,13 @@
-@import "../../styles/variables";
+// components/table/tableLayout.scss
 
 
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-
-    th, td {
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
-
-    th {
-      color: $header-color;
-      font-family:  $font-family;
-      font-weight: 600;
-    }
-
-    tr:hover {
-      background-color: #ddd;
+.table-contain {
+  .pagination {
+    margin-top: 10px;
+    text-align: right;
+    span {
+      font-size: 14px;
+      color: #888;
     }
   }
-  
+}

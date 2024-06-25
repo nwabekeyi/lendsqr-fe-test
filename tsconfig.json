@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "module": "commonjs",
+    "module": "esnext", // Changed from 'commonjs' to 'esnext'
     "target": "esnext",
     "lib": ["dom", "esnext"],
     "strict": true,

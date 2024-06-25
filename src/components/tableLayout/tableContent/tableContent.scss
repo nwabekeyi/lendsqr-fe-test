@@ -1,0 +1,42 @@
+
+@import "../../../styles/variables";
+
+.table-contain {
+  background-color: rgba(255, 255, 255, 0) !important;
+width: auto;
+  .table {
+    border-collapse: collapse;
+    font-size: small;
+    width: 100%;
+
+    th, td {
+      padding: 12px 15px;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      border-left: none;
+      border-right: none;
+      text-align: left;
+      color: $header-color;
+    }
+
+    th {
+      color: #545F7D;
+      font-family: $font-family;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    tr:first-child th,
+    tr:first-child td {
+      border-top: none;
+    }
+
+    tr:last-child th,
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}

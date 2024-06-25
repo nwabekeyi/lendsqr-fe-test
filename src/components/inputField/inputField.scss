@@ -46,7 +46,11 @@
 }
 
 .searchField {
-  width: 400px;
-  height: 40px;
+  padding: 5px 20px;
+  width: 250px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+
   @extend .loginField;
 }

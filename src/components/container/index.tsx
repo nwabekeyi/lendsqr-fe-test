@@ -9,7 +9,7 @@ interface WrappedComponentWrapperProps {
 function WrapperContainer<P extends object>(WrappedComponent: ComponentType<P & WrappedComponentWrapperProps>) {
   const EnhancedComponent: React.FC<P> = (props) => {
     return (
-      <div className="wrapper-container">
+      <div className="wrapper-contain">
         <WrappedComponent {...props as P & WrappedComponentWrapperProps} />
       </div>
     );

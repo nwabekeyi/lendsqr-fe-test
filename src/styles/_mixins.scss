@@ -12,13 +12,13 @@
   }
   
 
-@mixin button($backgorundColor: $button-color, $text-color: white, $padding: 16px 12px, $border-color: $button-color) {
+@mixin button($backgorundColor: $button-color, $text-color: white, $padding: 16px 12px, $border-color: $button-color, $width: 100%, $border-radius: 8px) {
     border: 1px solid $border-color;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: $border-radius;
     color: $text-color;
     background-color: $backgorundColor;
-    width: 100%;
+    width: $width;
     padding: $padding;
     cursor: pointer;
   }

@@ -1,0 +1,26 @@
+@import "../../../../styles/variables";
+
+.user-stats{
+    display: flex !important;
+    justify-content: space-evenly;
+    margin: 35px 0;
+    gap: 30px;
+    color: $header-color-dark;
+}
+
+.widget-content{
+    width: 90%;
+    padding: 25px 0 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.widget-label, .widget-value{
+    margin: 0;
+}
+
+.widget-label{
+    margin: 10px 0;
+}

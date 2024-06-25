@@ -1,0 +1,46 @@
+@import "../../../styles/variables";
+
+.widget-container{
+    background-color: none;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.status {
+    @extend .header;
+    gap:0;
+    justify-content: space-between;
+
+    &.active {
+        color: $active-color;
+        border: 1px solid $active-color-light;
+        padding: 6px 10px;
+        background-color: $active-color-light;
+        border-radius: 15px;
+    }
+
+    &.pending {
+        color: $pending-color;
+        border: 1px solid $pending-color-light;
+        background-color: $pending-color-light;
+        padding: 6px 10px;
+        border-radius: 15px;
+    }
+
+    &.blacklisted {
+        color: $blacklist-color;
+        color: $blacklist-color;
+        border: 1px solid $blacklist-color-light;
+        background-color: $blacklist-color-light;
+        padding: 6px 10px;
+        border-radius: 15px;
+        
+    }
+}
+
+
