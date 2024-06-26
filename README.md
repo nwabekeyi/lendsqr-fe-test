@@ -31,7 +31,7 @@ This project is an interview test for Landsqr. It consists of a login page that 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your_username/landsqr-interview-test.git
+   git clone https://github.com/nwabekeyi/lendsqr-fe-test.git
    cd landsqr-interview-test
 
    
@@ -77,9 +77,3 @@ Feel free to customize the README based on any additional requirements or prefer
 
 
 
-
-
-
-
-
-ChatGPT c
