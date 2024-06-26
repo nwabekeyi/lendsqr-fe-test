@@ -8,9 +8,10 @@ interface DropdownLayoutProps {
   onSelect: (value: string | number) => void;
   placeholder?: string;
   orgSelect?: any
+  field?: boolean
 }
 
-const Dropdown: React.FC<DropdownLayoutProps> = ({ options, value, onSelect, placeholder, orgSelect }) => {
+const Dropdown: React.FC<DropdownLayoutProps> = ({ options, value, onSelect, placeholder, orgSelect, field }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -22,7 +23,7 @@ const Dropdown: React.FC<DropdownLayoutProps> = ({ options, value, onSelect, pla
     setIsOpen(false);
   };
 
-  const headerClass:string = orgSelect ? "dropdown-header-org" : "dropdown-header"
+  const headerClass:string = orgSelect ? "dropdown-header-org" : field ? "field" : "dropdown-header"
 
   return (
     <div className="dropdown-container">

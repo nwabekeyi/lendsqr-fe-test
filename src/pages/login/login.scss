@@ -84,17 +84,17 @@ body {
     }
     }
     .login-header{
-      color: $header-color;
-      font-weight: $extra-bold-weight;
-      font-size:2.5em;
+      color: $header-color-dark;
+      font-weight: 900;
+      font-size:2.3em;
       @include mq-small {
         font-size: 2em;
       }
     }
     .login-text{
-      margin-top: 0;
-      color: $text-color;
-      margin-bottom: 2em;
+      margin-top: 1em;
+      color: $header-color;
+      margin-bottom: 1.85em;
       font-size: 20px;
       @include mq-small {
         margin-bottom: 4em;

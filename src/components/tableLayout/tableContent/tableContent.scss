@@ -1,9 +1,12 @@
-
 @import "../../../styles/variables";
+@import "../../../styles/media-queries.scss";
+
+// Assuming mq-large mixin is correctly defined
 
 .table-contain {
   background-color: rgba(255, 255, 255, 0) !important;
-width: auto;
+  width: auto;
+
   .table {
     border-collapse: collapse;
     font-size: small;
@@ -38,5 +41,15 @@ width: auto;
     tr:last-child td {
       border-bottom: none;
     }
+
+    // Apply styles for large screens (mq-large)
+    @include mq-large {
+      tr:nth-child(2),
+      tr:nth-child(4),
+      tr:nth-child(5) {
+        display: none;
+      }
+    }
   }
 }
+

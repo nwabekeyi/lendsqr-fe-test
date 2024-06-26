@@ -24,6 +24,16 @@
   .dropdown-icon{
     padding-left: 15px;
   }
+
+  .field{
+    // @extend .dropdown-header;
+    color: $text-color;
+    border: solid 2px blue !important;
+
+    &::placeholder{
+      color: $text-color !important;
+    }
+  }
 }
 
 .dropdown-header-org {

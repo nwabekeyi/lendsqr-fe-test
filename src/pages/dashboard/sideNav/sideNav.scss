@@ -63,7 +63,7 @@
     font-weight: 500;
   }
 
-  ul li a:hover {
+  ul li a:hover, .dashboard-link:hover{
     background-color:  #39cdcd19;
     border-left: 2px $button-color solid ;
     color: #21407d;

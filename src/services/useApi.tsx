@@ -28,6 +28,7 @@ function useApi<T>(url: string, localStorageKey: string) {
             throw new Error('Network response was not ok');
           }
           const data: T = await response.json();
+          console.log()
           setState({ data, loading: false, error: null });
           // Cache the fetched data in localStorage
           localStorage.setItem(localStorageKey, JSON.stringify(data));

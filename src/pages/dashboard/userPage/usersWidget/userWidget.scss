@@ -1,4 +1,6 @@
 @import "../../../../styles/variables";
+@import "../../../../styles/media-queries";
+
 
 .user-stats{
     display: flex !important;
@@ -6,6 +8,9 @@
     margin: 35px 0;
     gap: 30px;
     color: $header-color-dark;
+    @include mq-large {
+       flex-direction: column;
+      }
 }
 
 .widget-content{

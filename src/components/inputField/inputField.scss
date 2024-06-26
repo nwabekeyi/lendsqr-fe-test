@@ -54,3 +54,14 @@
 
   @extend .loginField;
 }
+.field{
+  @extend .loginField;
+  width: 220px;
+  height: 10%;
+  padding: 13px 8px;
+  display: flex;
+  align-items: center;
+  color: $text-color;
+  justify-content: space-between;
+
+}

@@ -13,6 +13,34 @@
 .login:active{
   @include buttonActive();
 }
-// .search{
-//   // @include button( $padding: 16px 12px,  $width: 2px, $border-radius: 4px)
-// }
+
+.filtered{
+  @extend .login;
+  border: $button-color solid 1px;
+  padding: 10px 8px;
+
+}
+
+.reset{
+  @extend .filtered;
+  background-color: transparent;
+  color: $header-color;
+  border: $header-color solid 1px;
+}
+
+.user-details-button{
+  @extend .reset;
+  padding: 0 ;
+  width: 150px;
+  height: 35px;
+  color: $button-color;
+  border: $button-color solid 1px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.user-details-button-red{
+  @extend .user-details-button;
+  color: $blacklist-color;
+  border: $blacklist-color solid 1px;
+  padding: "0 5px";
+}

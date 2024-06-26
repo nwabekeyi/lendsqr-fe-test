@@ -72,7 +72,7 @@ const Dashboard: React.FC = () => {
           <div className="current-title">{getCurrentNavLinkTitle()}</div>
           <Routes>
             <Route path="/" element={<DashboardHome />} />
-            <Route path="/users" element={<Users />} />
+            <Route path="/users/*" element={<Users />} />
           </Routes>
         </div>
       </div>

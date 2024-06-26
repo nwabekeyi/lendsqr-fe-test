@@ -31,7 +31,8 @@ import organ from "../../../assets/sideNav/organization.png";
 
 
 
-const Component: React.FC = () => {
+const Component: React.FC = (props) => {
+  console.log(props)
   const organizations = [
     { value: 'Lendsqr', label: 'Lendsqr' },
     { value: 'Paystack', label: 'Paystack' },
@@ -88,10 +89,10 @@ const Component: React.FC = () => {
       <div className="organization-section">
         <img src={organ} alt= "select organization icon" className='nav-icon' />
         <Dropdown
-          options={"Select Organization" && organizations}
+          options={organizations}
           value={selectedOrganization}
           onSelect={onSelectOrganization}
-          placeholder="Select organization"
+          placeholder="Select status"
           orgSelect
         />
       </div>
