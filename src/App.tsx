@@ -6,7 +6,7 @@ import AppRouter from './router';
 
 const App: React.FC = () => {
   return (
-    <div className="app">
+    <div id="app">
       <AppRouter/> 
   </div>
   );
