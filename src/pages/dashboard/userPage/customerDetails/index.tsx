@@ -78,15 +78,16 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({ user, onClose }) => {
                         <div className="profile-left">
                             <img src={user.userPicture} alt={`${user.fullName}'s profile`} className="user-picture" />
 
-                            <div className='divider' style={{ borderLeft: 'solid green 1px', padding: "20px", height: '100%', width: '5px'}}></div>
 
                             <div className="user-info">
-                                <p>{user.fullName}</p>
-                                <p>Customer ID: {user.bvn}</p>
+                                <p className='customer-name'>{user.fullName}</p>
+                                <p className='customer-id'>{user.bvn}</p>
                             </div>
+                            <div className='divider' style={{ borderLeft: 'solid green 1px', padding: "20px", height: '100%', width: '5px'}}></div>
+
                             <div className="profile-center">
                             <p>User's tier</p>
-                            {renderStars(user.starTier)}
+                            <span className="stars-container">{renderStars(user.starTier)}</span>
                         </div>
 
                         <div className='divider' style={{ borderLeft: 'solid green 1px', padding: "20px", height: '100%', width: '5px'}}></div>
@@ -104,17 +105,19 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({ user, onClose }) => {
                         
                         <div className="header-buttons">
                             <Link to="general-details" className="header-link">General Details</Link>
-                            <Link to="documents" className="header-link">Documents</Link>
-                            <Link to="bank-details" className="header-link">Bank Details</Link>
-                            <Link to="loans" className="header-link">Loans</Link>
-                            <Link to="savings" className="header-link">Savings</Link>
-                            <Link to="app-and-system" className="header-link">App and System</Link>
+                            <Link to="" className="header-link">Documents</Link>
+                            <Link to="" className="header-link">Bank Details</Link>
+                            <Link to="" className="header-link">Loans</Link>
+                            <Link to="" className="header-link">Savings</Link>
+                            <Link to="" className="header-link">App and System</Link>
                         </div>
                     </div>
                     {/* Main content area */}
                     <div className="content-section">
                         <Routes>
-                            <Route path="general-details" element={<CustomerInfo user={user} />} />
+                            {/* <Route path="/" element={<CustomerInfo user={user} />} /> */}
+                            <Route path="/general-details" element={<CustomerInfo user={user} />} />
+
                             {/* Add routes for other sections */}
                         </Routes>
                     </div>
