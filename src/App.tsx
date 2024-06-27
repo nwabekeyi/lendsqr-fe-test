@@ -6,7 +6,7 @@ import AppRouter from './router';
 
 const App: React.FC = () => {
   return (
-    <div id="app">
+    <div id="app" style={{overflowY: "auto"}}>
       <AppRouter/> 
   </div>
   );
