@@ -17,6 +17,7 @@ function useApi<T>(url: string, localStorageKey: string) {
 
   useEffect(() => {
     const fetchData = async () => {
+      localStorage.clear()
       try {
         // Check if data is cached in localStorage
         const cachedData = localStorage.getItem(localStorageKey);

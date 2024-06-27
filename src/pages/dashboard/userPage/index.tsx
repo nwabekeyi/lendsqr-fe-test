@@ -60,7 +60,7 @@ interface UserData {
 
 const Users: React.FC = () => {
 
-    const apiUrl = 'https://run.mocky.io/v3/da1d36cb-bb92-483f-80ed-c472490cb509';
+    const apiUrl = import.meta.env.VITE_USER_ENPOINT;
     const localStorageKey = 'userData';
 
     const { data, loading, error } = useApi<UserData[]>(apiUrl, localStorageKey);
