@@ -62,6 +62,7 @@ const Users: React.FC = () => {
 
     const apiUrl = import.meta.env.VITE_USER_ENPOINT;
     const localStorageKey = 'userData';
+    console.log(apiUrl)
 
     const { data, loading, error } = useApi<UserData[]>(apiUrl, localStorageKey);
 
