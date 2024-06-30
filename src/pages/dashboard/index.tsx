@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './navBar';
 import SideNav from './sideNav';
@@ -8,10 +8,33 @@ import './dashBoard.scss';
 
 const Dashboard: React.FC = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState<boolean>(window.innerWidth > 768);
+
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // Extract the current NavLink title
   const getCurrentNavLinkTitle = () => {
     const path = location.pathname;
+    
     const categories = [
       {
         title: 'CUSTOMERS',
@@ -63,11 +86,11 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="dashboard">
-      <div className='nav'>
-        <Navbar />
+      <div className="nav">
+        <Navbar toggleNav={toggleNav} isOpen={isOpen} />
       </div>
       <div className="content">
-        <SideNav />
+        {isOpen && <SideNav />}
         <div className="widgets">
           <div className="current-title">{getCurrentNavLinkTitle()}</div>
           <Routes>

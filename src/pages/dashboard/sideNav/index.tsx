@@ -31,8 +31,10 @@ import organ from "../../../assets/sideNav/organization.png";
 
 
 
-const Component: React.FC = (props) => {
-  console.log(props)
+
+
+
+const Component: React.FC = () => {
   const organizations = [
     { value: 'Lendsqr', label: 'Lendsqr' },
     { value: 'Paystack', label: 'Paystack' },

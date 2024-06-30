@@ -14,7 +14,7 @@ const TableContent: React.FC<TableContentProps> = ({ columns, data }) => {
     <div className="table-container container">
       <table className="table">
         <thead>
-          <tr>
+          <tr className="table-row">
             {columns.map((column, index) => (
               <th key={index}>{column.header}</th>
             ))}
@@ -22,7 +22,7 @@ const TableContent: React.FC<TableContentProps> = ({ columns, data }) => {
         </thead>
         <tbody>
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr key={rowIndex} className="table-row">
               {columns.map((column, colIndex) => (
                 <td key={colIndex}>{row[column.accessor]}</td>
               ))}

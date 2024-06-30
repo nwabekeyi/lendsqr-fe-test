@@ -7,12 +7,13 @@ import { NavLink } from 'react-router-dom';
 import Button from '../../../components/button';
 import { IoMdSearch } from "react-icons/io";
 
-const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+interface navProp {
+  toggleNav: () => void;
+  isOpen: boolean;
+}
 
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
+const Navbar: React.FC <navProp> = ({toggleNav, isOpen}) => {
+ 
 
   // Dummy user data, replace with actual user data from state or context
   const userName = 'Chidi Nwabeke';
@@ -20,8 +21,12 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="navbar">
+     
       {/* Logo */}
       <div className='flex-container logo-container'>
+
+       
+        
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
@@ -40,7 +45,8 @@ const Navbar: React.FC = () => {
 
         <NavLink to="" className="docs">Docs</NavLink>
 
-        {/* Notification Icon */}
+        <div className='profile'>
+           {/* Notification Icon */}
         <div className="notification-icon">
           <IoIosNotificationsOutline size={24} />
         </div>
@@ -64,22 +70,17 @@ const Navbar: React.FC = () => {
             <a href="/">Logout</a>
           </div>
         </div>
-
-        {/* Mobile Menu Bar */}
-        <div className="menu-icon" onClick={handleMenuToggle}>
-          {menuOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
+          
+              {/* Mobile Menu Bar */}
+      <div className="menu-icon" onClick={toggleNav}>
+          {isOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
         </div>
+        </div>
+       
+
+      
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="mobile-menu">
-          <NavLink to="" className="docs">Docs</NavLink>
-          <NavLink to="" className="mobile-menu-item">Profile</NavLink>
-          <NavLink to="" className="mobile-menu-item">Settings</NavLink>
-          <NavLink to="" className="mobile-menu-item">Logout</NavLink>
-        </div>
-      )}
     </div>
   );
 };

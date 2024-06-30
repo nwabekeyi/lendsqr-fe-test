@@ -1,4 +1,6 @@
 @import "../../styles/variables";
+@import "../../styles/media-queries.scss";
+
 .dashboard {
     display: flex;
     flex-direction: column;
@@ -10,7 +12,7 @@
         background-color: white;
         height: 70px;
         z-index: 1000;
-
+        width: auto;
     }
   
     .content {
@@ -21,6 +23,9 @@
         flex: 1;
         padding: 3%;
         overflow-y: auto;
+        @include mq-medium {
+          width: 100vw;
+         }
 
         .current-title{
           color: $header-color-dark;

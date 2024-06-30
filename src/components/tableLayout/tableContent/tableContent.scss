@@ -44,9 +44,12 @@
 
     // Apply styles for large screens (mq-large)
     @include mq-large {
-      tr:nth-child(2),
-      tr:nth-child(4),
-      tr:nth-child(5) {
+      th:nth-child(2),
+      th:nth-child(4),
+      th:nth-child(5),
+      td:nth-child(2),
+      td:nth-child(4),
+      td:nth-child(5) {
         display: none;
       }
     }
