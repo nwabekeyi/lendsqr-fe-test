@@ -12,6 +12,18 @@
     font-size: small;
     width: 100%;
 
+    @include mq-small {
+      // text-align: center;
+      font-size: x-small;
+
+      }
+
+      @include mq-extra-small {
+        // text-align: center;
+        font-size: 0.6em;
+  
+        }
+
     th, td {
       padding: 12px 15px;
       border-top: 1px solid #ddd;
@@ -20,6 +32,12 @@
       border-right: none;
       text-align: left;
       color: $header-color;
+
+      @include mq-large {
+        // text-align: center;
+
+        }
+
     }
 
     th {

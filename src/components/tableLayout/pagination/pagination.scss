@@ -1,5 +1,7 @@
 // components/table/pagination.scss
 @import '../../../styles/variables';
+@import '../../../styles/media-queries.scss';
+
 
 .pagination-container {
   display: flex;
@@ -9,6 +11,15 @@
   color: $text-color;
   font-size: small;
   font-weight: 500;
+
+  @include mq-large{
+    font-size: smaller;
+    padding-bottom: 15%;
+  }
+  @include mq-small{
+    font-size: 0.4em;
+  }
+  
 
   .pagination-info {
     width: 30%;
@@ -52,6 +63,14 @@
       padding: 5px 10px;
       font-size: 14px;
 
+      @include mq-large{
+        font-size: small;
+      }
+      @include mq-small{
+        font-size: 1.5em;
+      }
+
+
       &.active {
         font-weight: bold;
         color: $header-color;
@@ -74,4 +93,9 @@
 }
 .numbers{
     color: $text-color;
+
+
+    .total-item{
+      width: 100vw;
+    }
 }

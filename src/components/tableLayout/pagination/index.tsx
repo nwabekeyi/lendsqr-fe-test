@@ -79,7 +79,7 @@ const Pagination: React.FC<PaginationProps> = ({
           value={itemsPerPage}
           onSelect={(selected: string | number) => onItemsPerPageChange(Number(selected))}
         />
-        <span> out of {totalItems}</span>
+        <span className="total-item"> out of {totalItems}</span>
       </div>
       <div className="pagination-controls">
         <button onClick={handlePreviousPage} className="pagination-button" disabled={currentPage === 1}>

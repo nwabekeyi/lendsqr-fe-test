@@ -62,6 +62,7 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({ user, onClose }) => {
     return (
         <div className="customer-details">
             <div className="modal-content">
+                <div className='action-section'>
                 <div className="back">
                     <p id="back-arrows" onClick={onClose}><CgArrowLongLeft size={20} className="arrow" /> Back to Users</p>
                 </div>
@@ -72,9 +73,10 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({ user, onClose }) => {
                         <Button buttonText="ACTIVATE USER" userDetails />
                     </div>
                 </div>
-                <div className="user-details">
+                </div>
+                <div className="user-details ">
                     {/* Header section with navigation */}
-                    <div className="profile-section">
+                    <div className="profile-section container">
                         <div className="profile-left">
                             <img src={user.userPicture} alt={`${user.fullName}'s profile`} className="user-picture" />
 
@@ -92,8 +94,8 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({ user, onClose }) => {
 
                         <div className='divider' style={{ borderLeft: 'solid green 1px', padding: "20px", height: '100%', width: '5px'}}></div>
 
-                        <div className="">
-                            <p>{user.monthlyIncome}</p>
+                        <div className="bank-details">
+                            <p className='income'>{user.monthlyIncome}</p>
                             {user.bankDetails && (
                                 <div>
                                     <span>{user.bankDetails.bankName} / {user.bankDetails.accountNumber}</span>

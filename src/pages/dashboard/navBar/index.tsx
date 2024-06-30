@@ -76,9 +76,7 @@ const Navbar: React.FC <navProp> = ({toggleNav, isOpen}) => {
           {isOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
         </div>
         </div>
-       
 
-      
       </div>
 
     </div>

@@ -12,16 +12,33 @@
   color: #213F7D;
 
   @include mq-medium {
+    position: fixed;
+    width: 100vw;
   }
+  @include mq-large {
+    padding: 1.5% 1% 1% 1%;
+  }
+
+  @include mq-extra-small{
+    padding: 4% 0 0 2%;
+
+  }
+
 
   .flex-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width:auto;
+    padding-left: 1%;
 
     @include mq-small {
       justify-content: flex-end;
-      margin-top: 40px;
+      margin: 5% auto 3% auto;
+      border-radius: none;
+    }
+    @include mq-medium {
+      margin:  auto 2.5% auto auto;
     }
   }
 
@@ -36,6 +53,16 @@
   .logo img {
     height: 80%;
     width: 70%;
+
+    @include mq-small {
+      height: auto;
+      width: 100px !important;
+    }
+
+    @include mq-large {
+      height: auto;
+      width: 150px;
+    }
   }
 
   .search {
@@ -46,6 +73,9 @@
     @include mq-medium {
       display: none;
     }
+    @include mq-large {
+      margin-right: 20%;
+    }
 
     .search-button {
       padding: 2.5% 5%;
@@ -53,13 +83,10 @@
       border: none;
       color: white;
       height: 80%;
-      border-top-right-radius: 8px;
+   border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
     }
-    
   }
-
-  
 
   .menu-icon {
     display: none;
@@ -79,13 +106,18 @@
 .username{
   font-size: small;
   
-  @include mq-medium {
+  @include mq-large {
 display: none;  }
+
 }
 .profile{
   display: flex;
   align-items:center ;
   justify-content: flex-end;
+
+  @include mq-large {
+  width: auto;
+}
 
   .notification-icon {
     margin-left: 20px; /* Adjust margin as needed */
@@ -125,7 +157,8 @@ display: none;  }
 
   .dropdown-content {
     position: absolute;
-    top: 50px; /* Adjust dropdown position */
+    top: 50px; 
+    right: 5px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
     z-index: 1000;
@@ -154,7 +187,10 @@ display: none;  }
 
 .docs {
   color: $header-color-dark;
-  @include mq-medium {
+  @include mq-large {
     display: none;
   }
+  @include mq-large {
+    font-size: xx-small;
+   }
 }

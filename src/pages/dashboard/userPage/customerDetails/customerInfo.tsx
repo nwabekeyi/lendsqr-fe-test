@@ -28,64 +28,142 @@ interface CustomerInfoProps {
             facebook: string;
             instagram: string;
         };
-        guarantor?: {
+        guarantors?: Array<{
             fullName: string;
             phoneNumber: string;
             emailAddress: string;
             relationship: string;
-        };
+        }>;
     };
 }
 
 const CustomerInfo: React.FC<CustomerInfoProps> = ({ user }) => {
+    console.log(user);
     return (
         <div className="customer-info container">
             <div className="section">
-
                 <h3>Personal Information</h3>
-                <div className="details-flex">
-                    <p><strong>Full Name:</strong> {user.fullName}</p>
-                    <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
-                    <p><strong>Email Address:</strong> {user.email}</p>
-                    <p><strong>BVN:</strong> {user.bvn}</p>
-                    <p><strong>Gender:</strong> {user.gender}</p>
-                    <p><strong>Marital Status:</strong> {user.maritalStatus}</p>
-                    <p><strong>Children:</strong> {user.children}</p>
-                    <p><strong>Type of Residence:</strong> {user.typeOfResidence}</p>
+                <div className="details-grid">
+                    <div>
+                        <p>FULL NAME</p>
+                        <p className="details">{user.fullName}</p>
+                    </div>
+                    <div>
+                        <p>PHONE NUMBER</p>
+                        <p className="details">{user.phoneNumber}</p>
+                    </div>
+                    <div>
+                        <p>EMAIL ADDRESS</p>
+                        <p className="details">{user.email}</p>
+                    </div>
+                    <div>
+                        <p>BVN</p>
+                        <p className="details">{user.bvn}</p>
+                    </div>
+                    <div>
+                        <p>GENDER</p>
+                        <p className="details">{user.gender}</p>
+                    </div>
+                    <div>
+                        <p>MARITAL STATUS</p>
+                        <p className="details">{user.maritalStatus}</p>
+                    </div>
+                    <div>
+                        <p>CHILDREN</p>
+                        <p className="details">{user.children}</p>
+                    </div>
+                    <div>
+                        <p>TYPE OF RESIDENCE</p>
+                        <p className="details">{user.typeOfResidence}</p>
+                    </div>
                 </div>
             </div>
+
+            <hr />
 
             <div className="section">
                 <h3>Education and Employment</h3>
-                <div className="details-flex">
-                    <p><strong>Education Level:</strong> {user.educationLevel}</p>
-                    <p><strong>Employment Status:</strong> {user.employmentStatus}</p>
-                    <p><strong>Sector of Employment:</strong> {user.sectorOfEmployment}</p>
-                    <p><strong>Duration of Employment:</strong> {user.durationOfEmployment} years</p>
-                    <p><strong>Office Email:</strong> {user.officeEmail}</p>
-                    <p><strong>Monthly Income:</strong> {user.monthlyIncome}</p>
-                    <p><strong>Loan Repayment:</strong> {user.loanRepayment}</p>
+                <div className="details-grid">
+                    <div>
+                        <p>EDUCATION LEVEL</p>
+                        <p className="details">{user.educationLevel}</p>
+                    </div>
+                    <div>
+                        <p>EMPLOYMENT STATUS</p>
+                        <p className="details">{user.employmentStatus}</p>
+                    </div>
+                    <div>
+                        <p>SECTOR OF EMPLOYMENT</p>
+                        <p className="details">{user.sectorOfEmployment}</p>
+                    </div>
+                    <div>
+                        <p>DURATION OF EMPLOYMENT</p>
+                        <p className="details">{user.durationOfEmployment} years</p>
+                    </div>
+                    <div>
+                        <p>OFFICE EMAIL</p>
+                        <p className="details">{user.officeEmail}</p>
+                    </div>
+                    <div>
+                        <p>MONTHLY INCOME</p>
+                        <p className="details">{user.monthlyIncome}</p>
+                    </div>
+                    <div>
+                        <p>LOAN REPAYMENT</p>
+                        <p className="details">{user.loanRepayment}</p>
+                    </div>
                 </div>
             </div>
+
+            <hr />
 
             <div className="section">
                 <h3>Socials</h3>
-                <div className="details-flex">
-                    <p><strong>Twitter:</strong> {user.socials.twitter}</p>
-                    <p><strong>Facebook:</strong> {user.socials.facebook}</p>
-                    <p><strong>Instagram:</strong> {user.socials.instagram}</p>
+                <div className="details-grid">
+                    <div>
+                        <p>TWITTER</p>
+                        <p className="details">{user.socials.twitter}</p>
+                    </div>
+                    <div>
+                        <p>FACEBOOK</p>
+                        <p className="details">{user.socials.facebook}</p>
+                    </div>
+                    <div>
+                        <p>INSTAGRAM</p>
+                        <p className="details">{user.socials.instagram}</p>
+                    </div>
                 </div>
             </div>
 
-            {user.guarantor && (
+            <hr />
+
+            {user.guarantors && user.guarantors.length > 0 && (
                 <div className="section">
-                    <h3>Guarantor</h3>
-                    <div className="details-flex">
-                        <p><strong>Name:</strong> {user.guarantor.fullName}</p>
-                        <p><strong>Phone Number:</strong> {user.guarantor.phoneNumber}</p>
-                        <p><strong>Email Address:</strong> {user.guarantor.emailAddress}</p>
-                        <p><strong>Relationship:</strong> {user.guarantor.relationship}</p>
-                    </div>
+                    <h3>Guarantors</h3>
+                    {user.guarantors.map((guarantor, index) => (
+                        <React.Fragment key={index}>
+                            <div className="details-grid">
+                                <div>
+                                    <p>FULL NAME</p>
+                                    <p className="details">{guarantor.fullName}</p>
+                                </div>
+                                <div>
+                                    <p>PHONE NUMBER</p>
+                                    <p className="details">{guarantor.phoneNumber}</p>
+                                </div>
+                                <div>
+                                    <p>EMAIL ADDRESS</p>
+                                    <p className="details">{guarantor.emailAddress}</p>
+                                </div>
+                                <div>
+                                    <p>RELATIONSHIP</p>
+                                    <p className="details">{guarantor.relationship}</p>
+                                </div>
+                            </div>
+                            {index < user.guarantors.length - 1  && <hr />}
+
+                        </React.Fragment>
+                    ))}
                 </div>
             )}
         </div>
