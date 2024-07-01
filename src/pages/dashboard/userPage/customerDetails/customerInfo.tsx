@@ -160,7 +160,7 @@ const CustomerInfo: React.FC<CustomerInfoProps> = ({ user }) => {
                                     <p className="details">{guarantor.relationship}</p>
                                 </div>
                             </div>
-                            {index < user.guarantors.length - 1  && <hr />}
+                            {/* {index < user.guarantors.length - 1  && <hr />} */}
 
                         </React.Fragment>
                     ))}

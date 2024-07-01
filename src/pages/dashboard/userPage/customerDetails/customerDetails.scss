@@ -3,11 +3,11 @@
 .customer-details{
     height: auto;
     width: 81%;
-    position: absolute;
-    top: 15%;
+    position:fixed;
+    top: 10vh;
     z-index: 1000;
     background-color: #FBFBFB;
-    color: $header-color-dark
+    color: $header-color-dark;
     ;
 
         .header-section {
